@@ -3,3 +3,14 @@ reverse_sentence = ""
 for char in sentence:
     reverse_sentence = char + reverse_sentence
 print(reverse_sentence)
+
+
+
+//10진수 2진수로 바꾸기//
+decimal = 10
+result = ""
+while (decimal >0):
+    remainder = decimal %2
+    decimal = decimal //2
+    result = str(remainder)+result
+print(result)
