@@ -1,0 +1,30 @@
+import numpy as np
+
+#n = np.zeros((3,3))
+
+k = int(input("숫자를 입력하세요: "))
+
+
+def snail(n):
+  snail_list = np.zeros((n,n))
+  k = 1
+  i = 0
+  j = -1
+  t_num = 1
+
+  while n>0:
+#열 시작
+    for _ in range(n):
+      j += t_num
+      snail_list[i][j] = k
+      k +=1
+#행 시작
+    n -= 1
+    for _ in range(n):
+      i += t_num
+      snail_list[i][j] = k
+      k +=1
+    t_num *=-1
+  return snail_list
+
+print(snail(k))
