@@ -1,0 +1,51 @@
+# import numpy as np
+
+# #n=np.zeros((3,3))
+
+
+# N=int(input("zigzag 함수의 x를 입력해라: "))
+
+
+# def zigzag(x):
+
+#   k=0  
+#   list = np.zeros((x,x))
+    
+
+#   for i in (0,x):
+#     list[k][i-1] = i+1 
+#   k += 1 
+
+#   for i in (x-1,-1,-1):
+#     list[k][i] = i
+#   k += 1  
+
+#   return list
+
+# print(zigzag(N))
+
+
+import numpy as np
+a = int(input('숫자를 입력하세요'))
+
+def zigzag (k):
+  zigzag_list = np.zeros((a,a))
+  num = 1
+  '''
+  123
+  654
+  789
+  '''
+  for i in range(k):
+    if i % 2 == 1:
+      for j in range(k-1,-1,-1):
+        zigzag_list[i][j] = num
+        num += 1
+    else:
+      for j in range(0,k):
+        zigzag_list[i][j] = num
+        num += 1
+  return zigzag_list
+
+
+print(zigzag(a))
